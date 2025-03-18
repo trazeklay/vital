@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchHelloWorld } from "../thunks/helloWorldThunk";
-import { RootState, AppDispatch } from "../store";
+import { fetchHelloWorld } from "../redux/thunks/helloWorldThunk";
+import { RootState, AppDispatch } from "../redux/store";
 import { useTranslation } from "react-i18next";
 
 const Home: React.FC = () => {
