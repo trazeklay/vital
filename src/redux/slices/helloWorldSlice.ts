@@ -14,7 +14,6 @@ const initialState: HelloWorldState = {
   error: null,
 };
 
-
 const helloWorldSlice = createSlice({
   name: "helloWorld",
   initialState,
