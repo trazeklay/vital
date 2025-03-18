@@ -2,8 +2,10 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchHelloWorld } from "../redux/helloWorldSlice";
 import { RootState, AppDispatch } from "../redux/store";
+import { useTranslation } from "react-i18next";
 
 const Home: React.FC = () => {
+  const { t } = useTranslation();
   const dispatch = useDispatch<AppDispatch>();
   const { message, loading, error } = useSelector((state: RootState) => state.helloWorld);
 
@@ -13,10 +15,10 @@ const Home: React.FC = () => {
 
   return (
     <div>
-      <h1>Home Page</h1>
-      {loading && <p>Loading...</p>}
-      {error && <p style={{ color: "red" }}>{error}</p>}
-      {message && <p>Message: {message}</p>}
+      <h1>{t("home")}</h1>
+      {loading && <p>{t("loading")}</p>}
+      {error && <p style={{ color: "red" }}>{t("error")}</p>}
+      {message && <p>{t("hello")}: {message}</p>}
     </div>
   );
 };
