@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import helloWorldReducer from "./helloWorldSlice";
+import helloWorldReducer from "./slices/helloWorldSlice";
 
 export const store = configureStore({
   reducer: {

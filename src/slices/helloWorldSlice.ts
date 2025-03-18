@@ -1,5 +1,5 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
+import { createSlice } from "@reduxjs/toolkit";
+import { fetchHelloWorld } from "../thunks/helloWorldThunk";
 
 interface HelloWorldState {
   message: string;
@@ -14,14 +14,6 @@ const initialState: HelloWorldState = {
   error: null,
 };
 
-// Async Thunk to fetch data
-export const fetchHelloWorld = createAsyncThunk(
-  "helloWorld/fetchMessage",
-  async () => {
-    const response = await axios.get("https://jsonplaceholder.typicode.com/posts/1");
-    return response.data.title; // Using title as the message
-  }
-);
 
 const helloWorldSlice = createSlice({
   name: "helloWorld",
